@@ -64,7 +64,7 @@ $(document).ready(function () {
     });
 
     $("#home").click(function () {
-		$("#menu-bar").hide(500);
+		
         $(".home-box").fadeOut(500);
         $(".page").hide(1500);
         $("#test").fadeIn(2000);
@@ -88,6 +88,7 @@ $(document).ready(function () {
         $(".page").fadeOut(1000).delay(1000);
 
         $("#phone").show(1000);
+		$("#menu-bar").hide(500);
     });
 
     $("#menu-image").click(function () {
