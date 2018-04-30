@@ -2,16 +2,20 @@ var selected;
 $(document).ready(function () {
     var temp=1;
     $(".box").click(function () {
-        $(".points").css({"background-color":"#333333","color":"grey"});
-        $(this).children().css({"background-color":"grey","color":"black"});
-        var select= $(this).children().attr("id");
-        if(temp===1) {
-            animation();
-            temp=0;
+        $(".points").css({"background-color": "#333333", "color": "grey"});
+        $(this).children().css({"background-color": "grey", "color": "black"});
+        var select = $(this).children().attr("id");
+        if (select === "point3");
+        else
+        {
 
+            if (temp === 1) {
+                animation();
+                temp = 0;
+
+            }
+            pages(select);
         }
-        pages(select);
-
     });
 
     $("#home").click(function () {
