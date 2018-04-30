@@ -4,8 +4,8 @@
 a{
     text-decoration:none;
     color: white;
-    background-color: #35CCFF;
-    border: 5px solid #35CCFF;
+    background-color: #1e028e;
+    border: 5px solid #1e028e;
     border-radius: 5px;
 }
 a:hover{
@@ -18,7 +18,7 @@ a:hover{
 
 .back
 {
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background: linear-gradient(to bottom, #000066 0%, #993333 100%);
     height: 100vh;
     width: 100vw;
 }
@@ -32,7 +32,7 @@ a:hover{
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    box-shadow: 2px 5px 10px grey;
+    box-shadow: 2px 5px 10px #333333;
 }
 .img-pos
 {
@@ -46,14 +46,14 @@ a:hover{
     text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
     position: relative;
    /* background-color: #4c4c4c;*/
-    background-color: #333333;
+    background-color: #ebebeb;/*#333333;*/
     border-radius: 50%;
     padding-top: 6.5vw;
     width: 16vw;
     height: 16vw;
 
     margin-top: 1vw;
-    box-shadow: 2px 5px 10px grey ;
+    box-shadow: 2px 5px 10px #333333 ;
 }
 .box
 {
@@ -70,9 +70,9 @@ a:hover{
 
 
 @keyframes animate {
-    0%   {background-color: #333333;}
-    50%  {background-color: #fff000;}
-    100%  {background-color: #333333;}
+    0%   {background-color: #ebebeb;}
+    50%  {background-color: #000;}
+    100%  {background-color: #ebebeb;}
 }
 
 
@@ -85,14 +85,15 @@ a:hover{
 
 .page{
     position:relative;
-    background-color: #ebebeb ;
+   background-color: #ebebeb ;
+   /* background-color: #333333;*/
     border-radius: 10px;
     width:96vw;
     height:75vh;
     display: none;
     margin-left:2vw;
     margin-top: 2vw;
-    box-shadow: 2px 5px 10px grey;
+    box-shadow: 2px 5px 10px #333333;
     overflow: hidden;
     overflow-y: hidden;
     overflow-y: scroll;
@@ -135,6 +136,7 @@ a:hover{
 }
 .pages{
     font-size: 3vh;
+    /*color:gray;*/
     display: none;
     padding-bottom: 5px;
 }

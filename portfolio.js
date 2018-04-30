@@ -2,7 +2,7 @@ var selected;
 $(document).ready(function () {
     var temp=1;
     $(".box").click(function () {
-        $(".points").css({"background-color": "#333333", "color": "grey"});
+        $(".points").css({"background-color": "#ebebeb", "color": "grey"});
         $(this).children().css({"background-color": "grey", "color": "black"});
         var select = $(this).children().attr("id");
         if (select === "point3");
@@ -29,7 +29,7 @@ $(document).ready(function () {
             "margin-left":"auto"},{duration: 1500,queue: false});
         $(".points").animate({"width":"16vw",
             "height":"16vw","font-size": "2vw","padding-top": "6.5vw"},{duration: 2000, queue:false});
-        $(".points").css({"background-color":"#333333","color":"gray"});
+        $(".points").css({"background-color":"#ebebeb","color":"gray"});
 
         $(".profile-pic").animate({"width":"18vw","height":"18vw"},2000);
         $(".header").hide(500);
