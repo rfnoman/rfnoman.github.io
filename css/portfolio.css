@@ -1,5 +1,9 @@
 *{
-    font-family: 	Courier New, Helvetica, sans-serif;
+	font-family: 'Ubuntu';
+    font-style: normal;
+	/*font-family: "Open Sans";*/
+	/*font-family: 'Roboto', sans-serif;*/
+   /*font-family: 	Courier New, Helvetica, sans-serif;*/
 }
 a{
     text-decoration:none;
@@ -40,7 +44,7 @@ a:hover{
 }
 .points
 {
-    font-family: Courier New, Helvetica, sans-serif;
+   
     font-size: 2vw;
     color: gray;
     text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
