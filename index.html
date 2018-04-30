@@ -18,12 +18,85 @@
     <script type="text/javascript" src="portfolio.js"></script>
     <link href= "css/portfolio.css" rel="stylesheet" type="text/css">
 </head>
-    <div class="container-fluid back" >
+<body class="back">
+
+
+
+    <div class="container-fluid">
 
         <div class="row">
-            <div class="col-xs-12 page" align="middle">
+            <div class="menu" id="menu-bar">
+                <div class="phone-menu-item">
+                    <div  id="pages1-menu" align="middle">
+                        About me
+                    </div>
+                </div>
+                <div class="phone-menu-item" >
+                    <div  id="pages2-menu" align="middle">
+                        Education
+                    </div>
+                </div>
+                <div class="phone-menu-item" align="middle">
+                    <div id="pages3-menu">
+                        My Projects
+                    </div>
+                </div>
+
+                <div class="phone-menu-item" >
+                    <div id="pages4-menu" align="middle">
+                        Experience
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="phone" align="middle" id="phone">
+
+                <div class="col-sm-12 phone-box">
+                    <div id="phone-pic">
+                    <img src="css/accpic.jpg" class="phone-profile-pic">
+                    </div>
+                </div>
+                <div class="col-xs-6 phone-box" align="middle" >
+                    <div class="phone-points" id="pages1-phone" align="middle">
+                        About me
+                    </div>
+                </div>
+                <div class="col-xs-6 phone-box" align="middle">
+                    <div class="phone-points" id="pages2-phone" align="middle">
+                        Education
+                    </div>
+                </div>
+
+                <div class="col-xs-6 phone-box" align="middle">
+                    <div class="phone-points" id="pages3-phone" align="middle">
+                        My Projects
+                    </div>
+                </div>
+                <div class="col-xs-6 phone-box" align="middle">
+                    <div class="phone-points" id="pages4-phone" align="middle">
+                        Experience
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-xs-12 page header" align="middle">
+                <div class="container-fluid phone-top" id="phone-top" align="middle">
+                    <div class="col-xs-5" id="phone-back" align="left">
+                        <img  src="css/back.jpg" class="phone-back">
+                    </div>
+                    <div class="col-xs-2" id="phone-image" align="middle">
+                        <img class="page-header-image" src="css/accpic.jpg">
+                    </div>
+                    <div class="col-xs-5 " id="menu-image" align="right">
+                        <img class="phone-menu" src="css/menu.jpg">
+                    </div>
+                </div>
+
                 <div class="container-fluid header">
-                    <img class="page-header-image" src="css/accpic.jpg">
+                    <img id="pc-header" class="page-header-image" src="css/accpic.jpg">
                     <div class="contact">
                         <span class="name">Rubaiyat Ferdose Noman</span>
                         <span class="email">rubaiyat.ferdose.noman@gmail.com</span>
@@ -138,7 +211,7 @@
                 </div>
             </div>
 
-            <div class ="col-xs-12" align="middle">
+            <div class ="col-xs-12 pc" align="middle" id="pc">
                 <div class="row">
                     <div class="col-xs-2 box" align="middle" >
                         <div class="points" id="pages1">
@@ -177,4 +250,5 @@
 
 
     </div>
+</body>
 </html>
