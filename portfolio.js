@@ -64,7 +64,7 @@ $(document).ready(function () {
     });
 
     $("#home").click(function () {
-
+		$("#menu-bar").hide(500);
         $(".home-box").fadeOut(500);
         $(".page").hide(1500);
         $("#test").fadeIn(2000);
