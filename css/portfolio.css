@@ -4,8 +4,8 @@
 a{
     text-decoration:none;
     color: white;
-    background-color: #1e028e;
-    border: 5px solid #1e028e;
+    background-color: #020165;
+    border: 5px solid #020165;
     border-radius: 5px;
 }
 a:hover{
@@ -70,9 +70,9 @@ a:hover{
 
 
 @keyframes animate {
-    0%   {background-color: #ebebeb;}
-    50%  {background-color: #000;}
-    100%  {background-color: #ebebeb;}
+    0%   {background-color: #ebebeb; color: gray;}
+    50%  {background-color: gray; color: #ebebeb;}
+    100%  {background-color: #ebebeb; color:gray;}
 }
 
 
