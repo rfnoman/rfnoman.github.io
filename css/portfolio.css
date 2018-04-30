@@ -1,9 +1,18 @@
-*{
+/*{
 	font-family: 'Ubuntu';
     font-style: normal;
 	/*font-family: "Open Sans";*/
 	/*font-family: 'Roboto', sans-serif;*/
    /*font-family: 	Courier New, Helvetica, sans-serif;*/
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'), url(http://example.com/fonts/ubuntu.woff) format('woff');
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
 }
 a{
     text-decoration:none;
