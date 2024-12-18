@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" version="1.1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+ <rect width="400" height="400" fill="#1f2937"/>
+ <g transform="matrix(1.3333 0 0 -1.3333 0 400)">
+  <g transform="translate(150,150)">
+   <circle cx="0" cy="0" r="60" fill="#3b82f6"/>
+   <circle cx="0" cy="-20" r="30" fill="#1f2937"/>
+   <path d="m-45 20c0-25 20-45 45-45s45 20 45 45z" fill="#1f2937"/>
+  </g>
+ </g>
+</svg>

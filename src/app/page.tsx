@@ -1,101 +1,169 @@
-import Image from "next/image";
+import { PERSONAL_INFO, SKILLS, EXPERIENCE, PROJECTS, SOCIAL_LINKS, CERTIFICATIONS } from '@/constants';
+import { SectionTitle } from '@/components/SectionTitle';
+import { Footer } from '@/components/Footer';
+import { ContactForm } from '@/components/ContactForm'; // Import ContactForm component
+import Image from 'next/image';
+
+const currentYear = new Date().getFullYear();
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 relative">
+            <div className="w-40 h-40 mx-auto relative rounded-full overflow-hidden border-4 border-blue-500/30">
+              <Image
+                src={PERSONAL_INFO.avatar}
+                alt={PERSONAL_INFO.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            {PERSONAL_INFO.name}
+          </h1>
+          <h2 className="text-3xl text-blue-400 mb-6">{PERSONAL_INFO.role}</h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+            {PERSONAL_INFO.summary}
+          </p>
+          <div className="flex justify-center space-x-4">
+            {Object.entries(SOCIAL_LINKS).map(([platform, link]) => (
+              <a
+                key={platform}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 
+                px-6 py-2 rounded-full transition-all transform hover:scale-105"
+              >
+                {platform.charAt(0).toUpperCase() + platform.slice(1)}
+              </a>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <SectionTitle title="Skills & Expertise" />
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {Object.entries(SKILLS).map(([category, skills]) => (
+              <div key={category} 
+                className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl 
+                border border-gray-700 hover:border-blue-500 transition-all">
+                <h3 className="text-2xl font-semibold mb-4 capitalize text-blue-400">{category}</h3>
+                <div className="space-y-3">
+                  {skills.map((skill) => (
+                    <div key={skill.name} className="flex justify-between items-center">
+                      <span>{skill.name}</span>
+                      <span className="text-blue-400">{skill.level}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-20 px-4 bg-black/30">
+        <div className="container mx-auto">
+          <SectionTitle title="Professional Experience" />
+          <div className="max-w-4xl mx-auto space-y-12">
+            {EXPERIENCE.map((exp, index) => (
+              <div key={index} 
+                className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl
+                border border-gray-700 hover:border-blue-500 transition-all">
+                <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
+                <div className="text-blue-400 mb-4">
+                  {exp.company} • {exp.location} • {exp.period}
+                </div>
+                <ul className="space-y-2 text-gray-300">
+                  {exp.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-blue-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <SectionTitle title="Featured Projects" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {PROJECTS.map((project, index) => (
+              <div key={index} 
+                className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl
+                border border-gray-700 hover:border-blue-500 transition-all">
+                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <ul className="space-y-2 text-gray-300">
+                  {project.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-blue-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20 px-4 bg-black/30">
+        <div className="container mx-auto">
+          <SectionTitle title="Certifications" />
+          <div className="max-w-4xl mx-auto">
+            {CERTIFICATIONS.map((cert, index) => (
+              <div key={index} 
+                className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl
+                border border-gray-700 hover:border-blue-500 transition-all mb-4">
+                <h3 className="text-xl font-bold text-blue-400">{cert.name}</h3>
+                <p className="text-gray-300">
+                  {cert.issuer} • {cert.year}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <SectionTitle 
+            title="Get in Touch" 
+            subtitle="Have a question or want to work together? Feel free to reach out!"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <ContactForm />
+        </div>
+      </section>
+
+      <Footer name={PERSONAL_INFO.shortName} />
     </div>
   );
 }
