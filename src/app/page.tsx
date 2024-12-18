@@ -4,8 +4,6 @@ import { Footer } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm'; // Import ContactForm component
 import Image from 'next/image';
 
-const currentYear = new Date().getFullYear();
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
